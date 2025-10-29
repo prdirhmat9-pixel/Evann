@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Informasi Profil - Ferdi</title>
+<style>
+  /* ============ RESET & BODY ============ */
+  * {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* ============ NAVBAR ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0077ff, #00c6ff);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  nav ul li {
+    margin: 0 20px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  nav ul li a:hover {
+    color: #ffeb3b;
+  }
+
+  /* ============ SECTION ============ */
+  section {
+    min-height: 100vh;
+    padding: 100px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* HOME */
+  #home {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=60');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+  }
+  #home h1 {
+    font-size: 3em;
+    animation: fadeInDown 2s ease;
+  }
+  #home p {
+    margin-top: 15px;
+    font-size: 1.2em;
+    animation: fadeInUp 2.5s ease;
+  }
+  #home button {
+    margin-top: 25px;
+    background: #ffeb3b;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #home button:hover {
+    transform: scale(1.1);
+    background: #fff176;
+  }
+
+  /* ABOUT */
+  #about {
+    background-color: #ffffff;
+  }
+  #about h2 {
+    color: #0077ff;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+  }
+  #about p {
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+  }
+  #contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.2em;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+  }
+  input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+  }
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ffeb3b;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+
+  /* ============ ANIMASI KEYFRAMES ============ */
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Efek Fade-in saat muncul */
+  .show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  @media (max-width: 768px) {
+    #home h1 {font-size: 2em;}
+    #home p {font-size: 1em;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home">
+  <h1>Selamat Datang di Profil Saya</h1>
+  <p>Saya Ferdi Anandiya Rahmat — Web Developer & Desainer</p>
+  <button onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+    Jelajahi
+  </button>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <p class="fade-text">
+    Saya adalah seorang pengembang web yang berfokus pada desain antarmuka modern, animasi interaktif,
+    dan pengalaman pengguna yang menarik. Dengan keahlian di bidang HTML, CSS, dan JavaScript,
+    saya menciptakan website responsif dan menarik untuk kebutuhan personal maupun bisnis.
+  </p>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <h2>Hubungi Saya</h2>
+  <form onsubmit="event.preventDefault(); alert('Pesan terkirim! Terima kasih 😊');">
+    <input type="text" placeholder="Nama Anda" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Pesan Anda" rows="4" required></textarea>
+    <button type="submit">Kirim Pesan</button>
+  </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  &copy; 2025 Ferdi Anandiya Rahmat. All rights reserved.
+</footer>
+
+<script>
+  // ===== Efek Fade-in saat Scroll =====
+  const fadeElements = document.querySelectorAll('.fade-text');
+  window.addEventListener('scroll', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+</body>
+</html>
